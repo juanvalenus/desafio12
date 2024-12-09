@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclas y Colores</title>
+</head>
+<body>
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border: 1px solid black;"></div>
+    
+    <script>
+        let colorGlobal = '';
+
+        document.addEventListener('keydown', function (event) {
+            const keyDiv = document.getElementById('key');
+            if (event.key === 'a') {
+                colorGlobal = 'pink';
+                keyDiv.style.backgroundColor = colorGlobal;
+            } else if (event.key === 's') {
+                colorGlobal = 'orange';
+                keyDiv.style.backgroundColor = colorGlobal;
+            } else if (event.key === 'd') {
+                colorGlobal = 'lightblue';
+                keyDiv.style.backgroundColor = colorGlobal;
+            } else if (event.key === 'q') {
+                createDiv('purple');
+            } else if (event.key === 'w') {
+                createDiv('gray');
+            } else if (event.key === 'e') {
+                createDiv('brown');
+            }
+        });
+
+        function createDiv(color) {
+            const newDiv = document.createElement('div');
+            newDiv.style.width = '200px';
+            newDiv.style.height = '200px';
+            newDiv.style.backgroundColor = color;
+            newDiv.style.border = '1px solid black';
+            document.body.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
